@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeProject</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>PokeProject</h1>
+    <form action="/pokemon" method="POST">
+      <label for="pokemon">Pokemon or Id:</label>
+      <input type="text" id="pokemon" name="pokemon" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <%if(locals.pokemon){%>
+    <h2>Results</h2>
+    <p>Name: <%= pokemon.name %></p>
+    <p>Height: <%= pokemon.height %></p>
+    <p>Weight: <%= pokemon.weight %></p>
+    <p>Types: <%= pokemon.types.map(type => type.type.name).join(", ") %></p>
+    <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" />
+    <%}%>
+  </body>
+</html>
