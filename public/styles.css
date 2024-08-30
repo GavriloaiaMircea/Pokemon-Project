@@ -1,0 +1,136 @@
+/* Apply background image and basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-image: url("background.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.search-form {
+  margin-bottom: 20px;
+}
+
+.search-form input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin: 20px 0;
+}
+
+.pokemon-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pokemon-types {
+  margin-top: 10px;
+}
+
+.pokemon-types .type {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.pokemon-types .grass {
+  background: #78c850;
+}
+.pokemon-types .fire {
+  background: #f08030;
+}
+.pokemon-types .water {
+  background: #6890f0;
+}
+.pokemon-types .electric {
+  background: #f8d030;
+}
+.pokemon-types .psychic {
+  background: #f85888;
+}
+.pokemon-types .ice {
+  background: #98d8d8;
+}
+.pokemon-types .dragon {
+  background: #7038f8;
+}
+.pokemon-types .dark {
+  background: #705848;
+}
+.pokemon-types .fairy {
+  background: #f0b6bc;
+}
+.pokemon-types .bug {
+  background: #a8b820;
+}
+.pokemon-types .rock {
+  background: #b8a038;
+}
+.pokemon-types .ghost {
+  background: #705898;
+}
+.pokemon-types .steel {
+  background: #b8b8d0;
+}
+.pokemon-types .normal {
+  background: #a8a878;
+}
+.pokemon-types .fighting {
+  background: #c03028;
+}
+.pokemon-types .poison {
+  background: #a040a0;
+}
+.pokemon-types .ground {
+  background: #e0c068;
+}
+
+.pokemon-card img {
+  margin-top: 20px;
+  max-width: 150px;
+  height: auto;
+}

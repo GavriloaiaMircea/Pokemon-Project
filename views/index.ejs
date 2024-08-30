@@ -4,23 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeProject</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>PokeProject</h1>
-    <form action="/pokemon" method="POST">
-      <label for="pokemon">Pokemon or Id:</label>
-      <input type="text" id="pokemon" name="pokemon" />
-      <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+      <h1>PokeProject</h1>
+      <form action="/pokemon" method="POST" class="search-form">
+        <input
+          type="text"
+          name="pokemon"
+          placeholder="Pokémon Name or Pokedex entry!"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
 
-    <%if(locals.pokemon){%>
-    <h2>Results</h2>
-    <p>Name: <%= pokemon.name %></p>
-    <p>Height: <%= pokemon.height %></p>
-    <p>Weight: <%= pokemon.weight %></p>
-    <p>Types: <%= pokemon.types.map(type => type.type.name).join(", ") %></p>
-    <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" />
-    <%}%>
+      <% if (error) { %>
+      <div class="error"><%= error %></div>
+      <% } %> <% if (pokemon) { %>
+      <div class="pokemon-card">
+        <h2>Results</h2>
+        <p class="pokemon-name"><%= pokemon.name %></p>
+        <p><strong>Height:</strong> <%= pokemon.height %> decimetres</p>
+        <p><strong>Weight:</strong> <%= pokemon.weight %> hectograms</p>
+        <p class="pokemon-types">
+          <strong>Types:</strong>
+          <% pokemon.types.forEach(type => { %>
+          <span class="type <%= type.type.name %>"><%= type.type.name %></span>
+          <% }) %>
+        </p>
+        <img
+          src="<%= pokemon.sprites.front_default %>"
+          alt="<%= pokemon.name %>"
+        />
+      </div>
+      <% } %>
+    </div>
   </body>
 </html>
